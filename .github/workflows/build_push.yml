@@ -108,7 +108,7 @@ jobs:
 
       - name: Upload APKs (chunk ${{ matrix.chunk }})
         uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4
-        if: "github.repository == 'keiyoushi/extensions-source'"
+        if: "github.repository == 'MeLoseAgain/extensions-source'"
         with:
           name: "multisrc-apks-${{ matrix.chunk }}"
           path: "**/*.apk"
@@ -150,7 +150,7 @@ jobs:
 
       - name: Upload APKs (chunk ${{ matrix.chunk }})
         uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4
-        if: "github.repository == 'keiyoushi/extensions-source'"
+        if: "github.repository == 'MeLoseAgain/extensions-source'"
         with:
           name: "individual-apks-${{ matrix.chunk }}"
           path: "**/*.apk"
@@ -164,7 +164,7 @@ jobs:
     needs:
       - build_multisrc
       - build_individual
-    if: "github.repository == 'keiyoushi/extensions-source'"
+    if: "github.repository == 'MeLoseAgain/extensions-source'"
     runs-on: ubuntu-latest
     steps:
       - name: Download APK artifacts
@@ -196,7 +196,7 @@ jobs:
       - name: Checkout repo branch
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
-          repository: keiyoushi/extensions
+          repository: MeLoseAgain/extensions-apk
           token: ${{ secrets.BOT_PAT }}
           ref: repo
           path: repo
