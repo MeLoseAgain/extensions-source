@@ -102,7 +102,7 @@ class Komiktop : ParsedHttpSource() {
         manga.genre = genres.joinToString(", ")
         manga.status = parseStatus(document.select("#manga-info-Status .capitalize").text())
         manga.description = descElement.text()
-        manga.thumbnail_url = document.select(".thumb > img:nth-child(1)").imgAttr()
+        manga.thumbnail_url = document.select(".thum > img:nth-child(1)").imgAttr()
         return manga
     }
 
